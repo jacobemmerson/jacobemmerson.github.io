@@ -10,13 +10,109 @@
 -->
 
 <html>
-    <head>
-        <title>d o w k z</title>
-        <link rel="stylesheet" href="stylesheet.css">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <p>test</p>
-    </body>
+<head>
+    <title>d o w k z y</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400&display=swap" rel="stylesheet">
+
+    <script src="node_modules/universal-parallax/dist/universal-parallax.min.js"></script>
+    <script>
+        new universalParallax().init();
+    </script>
+</head>
+
+<body>
+    <section class="container container--full">
+        <div class="content fadeIn" stytle="position:relative;">
+            <h1>DOWKZY</h1>
+        </div>
+        
+        <div class="parallax"></div>
+    </section>
+
+    <section class="container container--big">
+        <div class="content fadeIn">
+            <ul>
+                <li>
+                    <h3>
+                        About Me
+                    </h3>
+                </li>
+                <li>
+                    19
+                </li>
+                <li>
+                    They/Them
+                </li>
+                <li>
+                    United States, East Coast
+                </li>
+                <li>
+                    Pursuing a Computer Science BSc.
+                </li>
+                <li>
+                    Python, Java, C#, HTML & CSS
+                </li>
+                <li>
+                    Web Dev & Digital Artist
+                </li>
+            </ul>
+        </div>
+        <div class="parallax" data-parallax-image="img/bg2.jpg"></div>
+    </section>
+
+    <section class="container container--small">
+        <div class="content fadeIn">
+            <h3>
+                Social Medias
+            </h3>
+            <ul>
+                <li class="socials">
+                    <a class="article" href="https://twitter.com/home" target="_blank">
+                        <b>Twitter</b>
+                    </a>
+                    <a class="article" href="https://www.twitch.tv/dowkzy" target="_blank">
+                        <b>Twitch</b>
+                    </a>
+                    <a class="article" href="https://discord.gg/WAsUVcSAnd" target="_blank">
+                        <b>Discord</b>
+                    </a>
+                </li>
+                <li class="socials">
+                    <a class="article" href="https://steamcommunity.com/id/pawhut/" target="_blank">
+                        <b>Steam</b>
+                    </a>
+                    <a class="article" href="https://telegram.me/dowkz" target="_blank">
+                        <b>Telegram</b>
+                    </a>
+                    <a class="article" href="https://www.tiktok.com/@dowkzy?lang=en" target="_blank">
+                        <b>Tiktok</b>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="parallax" id="white" data-parallax-image="img/bg3.jpg"></div>
+    </section>
+
+    <section class="container container--full">
+        <div class="content fadeIn">
+            <h3>
+                Projects
+            </h3>
+            <strong> Under Construction</strong>
+        </div>
+        <div class="parallax" data-parallax-image="img/bg4.jpg"></div>
+    </section>
+
+    <script src="universal-parallax.js"></script>
+    <script>
+        new universalParallax().init({
+            speed: 10
+        });
+    </script>
+</body>
 </html>
