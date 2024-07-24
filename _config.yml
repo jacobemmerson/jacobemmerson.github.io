@@ -17,10 +17,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Jacob T. Emmerson"
-title_separator          : "-"
+title                    : "Jacob Tae H. Emmerson"
+title_separator          : ""
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Jacob T. Emmerson"
+name                     : "Jacob Tae H. Emmerson"
 description              : "An amazing website."
 url                      : "https://jacobemmerson.github.io/"
 baseurl                  : 
@@ -113,27 +113,21 @@ analytics:
 
 # Site Author
 author:
-  name             : " "
+  name             : 
   avatar           : "/assets/images/IMG_3007.jpg"
-  bio              : " "
+  bio              : "he/him/his"
   location         : "Pittsburgh, PA"
-  email            : ""
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      #url: "mailto:emmerson.jacob@gmail.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "mailto:emmerson.jacob@gmail.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jacob-emmerson-00775a198/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jacobemmerson"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
 
 # Site Footer
 footer:

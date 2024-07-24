@@ -87,4 +87,19 @@ html {
         border: 1px solid $border-color;
         }
     }
+}
+
+.author__bio {
+    margin: 0;
+    font-size: 20px;
+
+    @include breakpoint($large) {
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
+  }
+
+strong {
+    font-size: 16px;
+}
+
