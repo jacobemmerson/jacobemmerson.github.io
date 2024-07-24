@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "CV"
-    url: {{ site.baseurl }}'/assets/cv/curriculum_vitae_jte.pdf/'
+    url: '/assets/cv/curriculum_vitae_jte.pdf/'
     target: "_blank"
   #- title: "Contact"
   #  url: /contact/

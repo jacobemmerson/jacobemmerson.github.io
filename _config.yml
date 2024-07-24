@@ -23,7 +23,7 @@ subtitle                 : # site tagline that appears below site title in masth
 name                     : "Jacob T. Emmerson"
 description              : "An amazing website."
 url                      : "https://jacobemmerson.github.io/"
-baseurl                  : ""
+baseurl                  : 
 repository               : "jacobemmerson/jacobemmerson.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
