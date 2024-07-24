@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : " "
-  avatar           : "{{ site.baseurl }}/assets/images/IMG_3007.jpg/"
+  avatar           : "/assets/images/IMG_3007.jpg/"
   bio              : " "
   location         : "Pittsburgh, PA"
   email            : ""
