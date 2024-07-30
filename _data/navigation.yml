@@ -3,8 +3,8 @@ main:
   - title: "CV"
     url: '/assets/cv/curriculum_vitae_jte.pdf'
     target: "_blank"
-  #- title: "Contact"
-  #  url: /contact/
+  - title: "Projects"
+    url: /projects/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
