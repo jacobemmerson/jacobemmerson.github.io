@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "CV"
-    url: '/assets/cv/cv_jte.pdf'
+    url: '/assets/cv/jacob_emmerson_cv.pdf'
     target: "_blank"
   - title: "Projects"
     url: /projects/
