@@ -1,7 +1,7 @@
 # main links, check _pages
 main:
   - title: "CV"
-    url: '/assets/cv/jacob_emmerson_cv.pdf'
+    url: '/assets/cv/jacob_emmerson_CV.pdf'
     target: "_blank"
   #- title: "Tidbits"
   #  url: '/tidbits/'
