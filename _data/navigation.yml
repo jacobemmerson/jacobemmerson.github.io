@@ -1,10 +1,12 @@
-# main links
+# main links, check _pages
 main:
   - title: "CV"
     url: '/assets/cv/jacob_emmerson_cv.pdf'
     target: "_blank"
-  - title: "Projects"
-    url: /projects/
+  #- title: "Tidbits"
+  #  url: '/tidbits/'
+  #- title: "Projects"
+  # url: /projects/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
