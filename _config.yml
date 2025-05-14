@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : 
-  avatar           : "/assets/images/IMG_0397.jpg"
+  avatar           : "/assets/images/main.png"
   bio              : "he/him/his"
   location         : "Pittsburgh, PA"
   email            : 
@@ -128,6 +128,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jacobemmerson"
+    - label: "Google Scholar"
+      icon: "fa-brands fa-google-scholar"
+      url: "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AIfU4H4ahctVKap4aUPGI7gE1bLVYcm6Ti9Ov58Bk3FO7xyiZA3Wtd20tyrjST0GldacRSjRIb2rzfRTUWreLkThfzfd&user=YKG43xoAAAAJ"
 
 # Site Footer
 footer:
