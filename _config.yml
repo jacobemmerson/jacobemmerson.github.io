@@ -12,16 +12,16 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 remote_theme: "mmistakes/minimal-mistakes@4.26.2"
-minimal_mistakes_skin    : # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Jacob Tae H. Emmerson"
-title_separator          : ""
-subtitle                 : # site tagline that appears below site title in masthead
+title                    : "Tae Emmerson"
+title_separator          : 
+subtitle                 : "he/him/his" # site tagline that appears below site title in masthead
 name                     : "Jacob Tae H. Emmerson"
-description              : "An amazing website."
+description              : "Jacob Tae H. Emmerson Personal Website"
 url                      : "https://jacobemmerson.github.io/"
 baseurl                  : 
 repository               : "jacobemmerson/jacobemmerson.github.io"
@@ -115,7 +115,7 @@ analytics:
 author:
   name             : 
   avatar           : "/assets/images/main.png"
-  bio              : "he/him/his"
+  bio              : ""
   location         : "Pittsburgh, PA"
   email            : 
   links:
