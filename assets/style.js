@@ -7,6 +7,10 @@ const basecolor = "#777";
 const accentcolor = "#007";
 const highlightcolor = "#111";
 
+//const basecolor = "#c9c9c9ff";
+//const accentcolor = "rgba(162, 176, 247, 1)";
+//const highlightcolor = "#d1d1d1ff";
+
 // const basecolor = "#888";
 // const accentcolor = "#222";
 // const highlight = "#111";
@@ -15,6 +19,7 @@ const highlightcolor = "#111";
 const bodyfontweight = 300;
 const bodyfontsize = "12pt";
 const backgroundcolor = "#FFFAF0";
+//const backgroundcolor = "#2D2C25";
 
 // Link properties
 const acolor = accentcolor;
@@ -37,6 +42,7 @@ const headerfontsize = "18pt";
 const headerdecoration = "none";
 const namecolor = highlightcolor;
 const namefontsize = "23pt";
+const namepadding = "0px";
 
 
 // Publication properties
@@ -96,6 +102,8 @@ $(".header").css("font-size", headerfontsize);
 $(".header").css("text-decoration", headerdecoration);
 $(".name").css("color", namecolor);
 $(".name").css("font-size", namefontsize);
+$(".name").css("padding-bottom", namepadding);
+$(".name").css("margin-bottom", namepadding);
 
 $(".papertitle").css("color", ptitlecolor);
 $(".papertitle").css("font-size", ptitlefontsize);
