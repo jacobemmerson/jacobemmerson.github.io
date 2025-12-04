@@ -8,12 +8,8 @@ const accentcolor = "#007";
 const highlightcolor = "#111";
 
 //const basecolor = "#c9c9c9ff";
-//const accentcolor = "rgba(162, 176, 247, 1)";
+//const accentcolor = "rgba(161, 205, 255, 1)";
 //const highlightcolor = "#d1d1d1ff";
-
-// const basecolor = "#888";
-// const accentcolor = "#222";
-// const highlight = "#111";
 
 // Body properties
 const bodyfontweight = 300;
