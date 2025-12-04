@@ -100,6 +100,8 @@ $(".name").css("color", namecolor);
 $(".name").css("font-size", namefontsize);
 $(".name").css("padding-bottom", namepadding);
 $(".name").css("margin-bottom", namepadding);
+$(".pro").css("padding-top", namepadding);
+$(".pro").css("margin-top", namepadding);
 
 $(".papertitle").css("color", ptitlecolor);
 $(".papertitle").css("font-size", ptitlefontsize);
