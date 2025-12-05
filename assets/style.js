@@ -24,10 +24,10 @@ const updateIconColor = (theme) => {
   icons.forEach((el) => {
     if (theme === "dark") {
       // make the icon light
-      el.style.filter = "brightness(0) invert(1)";
+      el.style.filter = "invert(1) brightness(0.75)";
     } else {
       // normal icon
-      el.style.filter = "none";
+      el.style.filter = "brightness(0.75)";
     }
   });
 };
