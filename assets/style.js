@@ -1,120 +1,171 @@
-// Initialize font properties
+//--------------------------------------------------
+// SMOOTH THEME SYSTEM (ALL JAVASCRIPT)
+//--------------------------------------------------
+
+// Theme definitions
+const themes = {
+  light: {
+    "--basecolor": "#777",
+    "--accentcolor": "#007",
+    "--highlightcolor": "#111",
+    "--backgroundcolor": "#FFFAF0"
+  },
+  dark: {
+    "--basecolor": "#c9c9c9ff",
+    "--accentcolor": "rgba(161, 205, 255, 1)",
+    "--highlightcolor": "#d1d1d1ff",
+    "--backgroundcolor": "#2D2C25"
+  },
+};
+
+const updateIconColor = (theme) => {
+  const icons = document.querySelectorAll(".theme-icon");
+
+  icons.forEach((el) => {
+    if (theme === "dark") {
+      // make the icon light
+      el.style.filter = "brightness(0) invert(1)";
+    } else {
+      // normal icon
+      el.style.filter = "none";
+    }
+  });
+};
+
+// Detect system preference
+const systemTheme = () =>
+  window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+
+// Get saved theme or default
+const getTheme = () => localStorage.getItem("theme") || systemTheme();
+
+// Apply theme variables
+const setTheme = (t) => {
+  localStorage.setItem("theme", t);
+
+  // Toggle dark class
+  document.documentElement.classList.toggle("dark", t === "dark");
+
+  // Apply root CSS variables
+  for (const k in themes[t]) {
+    document.documentElement.style.setProperty(k, themes[t][k]);
+  }
+
+  updateIconColor(t); 
+};
+
+// Initialize theme
+setTheme(getTheme());
+
+// Theme toggle
+const toggleTheme = () => {
+  const newTheme = getTheme() === "dark" ? "light" : "dark";
+  setTheme(newTheme);
+};
+
+//--------------------------------------------------
+// GLOBAL SMOOTH TRANSITIONS (APPLIED ONCE)
+//--------------------------------------------------
+
+// Add smooth transitions to ANY element that uses your CSS variables
+const elementsToSmooth = [
+  "html",
+  "body",
+  "a",
+  ".header",
+  ".name",
+  ".menulink",
+  ".papertitle",
+  ".thisauthor",
+  ".institution",
+  ".years",
+  "input"
+];
+
+elementsToSmooth.forEach((sel) => {
+  document.querySelectorAll(sel).forEach((el) => {
+    el.style.transition =
+      "background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease";
+  });
+});
+
+//--------------------------------------------------
+// STYLING (ALL JS, NO CSS NEEDED)
+//--------------------------------------------------
+
 const fontname = "Garamond";
-const fontweights = [300, 400]
+const fontweights = [300, 400];
 
-// Color properties
-const basecolor = "#777";
-const accentcolor = "#007";
-const highlightcolor = "#111";
-
-//const basecolor = "#c9c9c9ff";
-//const accentcolor = "rgba(161, 205, 255, 1)";
-//const highlightcolor = "#d1d1d1ff";
-
-// Body properties
 const bodyfontweight = 300;
 const bodyfontsize = "12pt";
-const backgroundcolor = "#FFFAF0";
-//const backgroundcolor = "#2D2C25";
-
-// Link properties
-const acolor = accentcolor;
 const adecoration = "underline dotted";
-// const ahovercolor = accentcolor;
-// const ahoverduration = "0.3s";
-// const ahoverdecoration = "none"; //none, underline, overline, dotted, color (https://www.w3schools.com/cssref/pr_text_text-decoration.asp)
-
-// Menu properties
-const menucolor = basecolor;
-const menufontsize = "15pt";
 const menudecoration = "none";
-// const menuhover = accentcolor;
-// const menuhoverduration = "0.3s";
-// const menuhoverdecoration = "none"; //none, underline, overline, dotted, color (https://www.w3schools.com/cssref/pr_text_text-decoration.asp)
-
-// Header properties
-const headercolor = accentcolor;
 const headerfontsize = "18pt";
 const headerdecoration = "none";
-const namecolor = highlightcolor;
 const namefontsize = "23pt";
 const namepadding = "0px";
 
-
-// Publication properties
-const ptitlecolor = accentcolor;
 const ptitlefontsize = bodyfontsize;
 const ptitleweight = bodyfontweight;
 const ptitledecoration = "none";
 const ptitlestyle = "normal";
 
-const authorcolor = accentcolor;
-const authorweight = bodyfontweight;
-const authordecoration = "none";
-const authorstyle = "normal";
-
-const selfcolor = highlightcolor;
 const selfweight = bodyfontweight;
 const selfdecoration = "none";
 const selfstyle = "normal";
 
-const tagcolor = accentcolor;
-const tagweight = bodyfontweight;
-const tagdecoration = "none";
-const tagstyle = "normal";
-
-const insttitlecolor = highlightcolor;
 const insttitlesize = "12px";
-const instyearcolor = accentcolor;
 const instyearsize = "11px";
 
-//     .institution {
-//             font - size: 12px;
-//             color: #222;
-//         }
-//   .years {
-//             font - size: 11px;
-//             color: #888;
-//         }
+// Load Google Fonts
+$("head").append(
+  `<link href="https://fonts.googleapis.com/css2?family=${fontname}:wght@${fontweights.join(
+    ";"
+  )}&display=swap" rel="stylesheet" type="text/css">`
+);
 
-// Works for sans serif, change otherwise
-$("head").append("<link href='https://fonts.googleapis.com/css2?family=" + fontname + ":wght@" + fontweights.join(';') + "&display=swap' rel='stylesheet' type='text/css'>");
-$("body").css("font-family", fontname);
+$("body")
+  .css("font-family", fontname)
+  .css("font-weight", bodyfontweight)
+  .css("font-size", bodyfontsize)
+  .css("color", "var(--basecolor)")
+  .css("background-color", "var(--backgroundcolor)");
 
-$("body").css("color", basecolor);
-$("body").css("font-weight", bodyfontweight);
-$("body").css("font-size", bodyfontsize);
-$("body").css("background-color", backgroundcolor);
+$("a").css("color", "var(--accentcolor)").css("text-decoration", adecoration);
 
-$("a").css("color", acolor);
-$("a").css("text-decoration", adecoration);
+$(".menulink")
+  .css("color", "var(--basecolor)")
+  .css("font-size", "15pt")
+  .css("text-decoration", menudecoration);
 
-$(".menulink").css("color", menucolor);
-$(".menulink").css("font-size", menufontsize);
-$(".menulink").css("text-decoration", menudecoration);
+$(".header")
+  .css("color", "var(--accentcolor)")
+  .css("font-size", headerfontsize)
+  .css("text-decoration", headerdecoration);
 
-$(".header").css("color", headercolor);
-$(".header").css("font-size", headerfontsize);
-$(".header").css("text-decoration", headerdecoration);
-$(".name").css("color", namecolor);
-$(".name").css("font-size", namefontsize);
-$(".name").css("padding-bottom", namepadding);
-$(".name").css("margin-bottom", namepadding);
-$(".pro").css("padding-top", namepadding);
-$(".pro").css("margin-top", namepadding);
+$(".name")
+  .css("color", "var(--highlightcolor)")
+  .css("font-size", namefontsize)
+  .css("padding-bottom", namepadding)
+  .css("margin-bottom", namepadding);
 
-$(".papertitle").css("color", ptitlecolor);
-$(".papertitle").css("font-size", ptitlefontsize);
-$(".papertitle").css("font-weight", ptitleweight);
-$(".papertitle").css("text-decoration", ptitledecoration);
-$(".papertitle").css("font-style", ptitlestyle);
+$(".papertitle")
+  .css("color", "var(--accentcolor)")
+  .css("font-size", ptitlefontsize)
+  .css("font-weight", ptitleweight)
+  .css("text-decoration", ptitledecoration)
+  .css("font-style", ptitlestyle);
 
-$(".thisauthor").css("color", selfcolor);
-$(".thisauthor").css("font-weight", selfweight);
-$(".thisauthor").css("text-decoration", selfdecoration);
-$(".thisauthor").css("font-style", selfstyle);
+$(".thisauthor")
+  .css("color", "var(--highlightcolor)")
+  .css("font-weight", selfweight)
+  .css("text-decoration", selfdecoration)
+  .css("font-style", selfstyle);
 
-$(".institution").css("color", insttitlecolor);
-$(".institution").css("font-size", insttitlesize);
-$(".years").css("color", instyearcolor);
-$(".years").css("font-size", instyearsize);
+$(".institution")
+  .css("color", "var(--highlightcolor)")
+  .css("font-size", insttitlesize);
+
+$(".years").css("color", "var(--accentcolor)").css("font-size", instyearsize);

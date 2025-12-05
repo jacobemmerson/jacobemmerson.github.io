@@ -11,6 +11,10 @@ a:hover {
     /* color: #444; */
 }
 
+input {
+   -webkit-filter: invert(1);
+   filter: invert(1);
+   }
 
 .noter {
     font-size: 9pt;
