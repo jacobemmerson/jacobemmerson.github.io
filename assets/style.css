@@ -46,6 +46,11 @@ a:hover {
     filter: grayscale(30%);
 }
 
+.context {
+    padding: 0;
+    margin-top: 0;
+}
+
 @media (min-width: 768px) {
     .fixed-posi {
         /* width: 50%;
