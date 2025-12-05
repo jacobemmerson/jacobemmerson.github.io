@@ -13,7 +13,7 @@ const themes = {
   dark: {
     "--basecolor": "#c9c9c9ff",
     "--accentcolor": "rgba(161, 205, 255, 1)",
-    "--highlightcolor": "#d1d1d1ff",
+    "--highlightcolor": "rgba(255, 255, 255, 1)",
     "--backgroundcolor": "#2D2C25"
   },
 };
