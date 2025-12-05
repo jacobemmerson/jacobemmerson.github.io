@@ -30,7 +30,14 @@
                 <p class="name">Tae Emmerson</p>
                 <p class="context"> /teɪ/; pronounced tay<br>lastname.firstname@gmail.com</p>
 
-                <img src="images/me.png" class="profilepic pt-3 pb-2">
+                <div class="profilepic-flip-container" ondblclick="flipProfile()"> 
+                    <div class="profilepic-flipper">
+                        <!-- front -->
+                        <img src="images/me.png"     class="profilepic face" alt="me (front)">
+                        <!-- back -->
+                        <img src="images/dog.png" class="profilepic face back" alt="the dog">
+                    </div>
+                </div>
 
                 <div class="pt-2 menur"><a class="menulink" target="_blank" href="assets/tae_emmerson_cv.pdf">curriculum vitae</a></div>
                 <div class=""><a class="menulink" target="_blank" href="https://github.com/jacobemmerson">github profile</a></div>

@@ -14,7 +14,7 @@ const themes = {
     "--basecolor": "#c9c9c9ff",
     "--accentcolor": "rgba(161, 205, 255, 1)",
     "--highlightcolor": "rgba(255, 255, 255, 1)",
-    "--backgroundcolor": "#2D2C25"
+    "--backgroundcolor": "#3b3935ff"
   },
 };
 
@@ -89,6 +89,28 @@ elementsToSmooth.forEach((sel) => {
     el.style.transition =
       "background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease";
   });
+});
+
+// ————————————————————————————————
+// PROFILE PICTURE FLIPPING (double click)
+// ————————————————————————————————
+
+const flipper = document.querySelector('.profilepic-flipper');
+
+function flipProfile() {
+    flipper.classList.toggle('flipped');
+}
+
+// Also support double-tap on mobile
+let lastTap = 0;
+document.querySelector('.profilepic-flip-container').addEventListener('touchend', function(e) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    if (tapLength < 500 && tapLength > 0) {
+        flipProfile();
+        e.preventDefault();
+    }
+    lastTap = currentTime;
 });
 
 //--------------------------------------------------
