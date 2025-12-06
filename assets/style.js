@@ -6,13 +6,13 @@
 const themes = {
   light: {
     "--basecolor": "#777",
-    "--accentcolor": "#007",
-    "--highlightcolor": "#111",
+    "--accentcolor": "rgba(24, 24, 111, 1)",
+    "--highlightcolor": "#111111ff",
     "--backgroundcolor": "#FFFAF0"
   },
   dark: {
     "--basecolor": "#c9c9c9ff",
-    "--accentcolor": "rgba(161, 205, 255, 1)",
+    "--accentcolor": "rgba(135, 179, 230, 1)",
     "--highlightcolor": "rgba(255, 255, 255, 1)",
     "--backgroundcolor": "#3b3935ff"
   },
@@ -101,16 +101,39 @@ function flipProfile() {
     flipper.classList.toggle('flipped');
 }
 
-// Also support double-tap on mobile
-let lastTap = 0;
+document.querySelector('.profilepic-flip-container').addEventListener('dblclick', function(e) {
+  e.preventDefault();
+  flipProfile();
+});
+
+// support double-tap on mobile
+let lastTapTime = 0;
+let tapCount = 0;
+let tapTimeout = null;
+
 document.querySelector('.profilepic-flip-container').addEventListener('touchend', function(e) {
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - lastTap;
-    if (tapLength < 500 && tapLength > 0) {
-        flipProfile();
-        e.preventDefault();
+    e.preventDefault();
+
+    const now = Date.now();
+    const TIME_LIMIT = 500;
+
+    if (now - lastTapTime < TIME_LIMIT) {
+        tapCount++;
+    } else {
+        tapCount = 1;
     }
-    lastTap = currentTime;
+
+    lastTapTime = now;
+
+    // Clear any previous timeout
+    if (tapTimeout) clearTimeout(tapTimeout);
+
+    tapTimeout = setTimeout(() => {
+        if (tapCount === 2) {
+            flipProfile();
+        }
+        tapCount = 0;                      // reset
+    }, TIME_LIMIT + 50);                   // wait a tiny bit past the limit
 });
 
 //--------------------------------------------------

@@ -47,6 +47,7 @@ a:hover {
     -moz-user-select: none; 
     -ms-user-select: none; 
     user-select: none;
+    touch-action: manipulation;
 }
 
 .profilepic-flipper {
@@ -54,7 +55,7 @@ a:hover {
     height: 150px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* super bouncy */
+    transition: transform 1.45s cubic-bezier(0.68, -0.65, 0.265, 1.45); /* super bouncy */
 }
 
 .profilepic-flipper.flipped {
