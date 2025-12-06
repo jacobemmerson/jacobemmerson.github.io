@@ -143,22 +143,34 @@ document.querySelector('.profilepic-flip-container').addEventListener('dblclick'
 });
 
 // support double-tap on mobile
+let lastTapTime = 0;
+let tapCount = 0;
+let tapTimeout = null;
 
-document.querySelector('.profilepic-flip-container').addEventListener('touchend', function(e) {
+flipContainer.addEventListener('touchend', (e) => {
     e.preventDefault();
 
-    tapCount++;
-    if (tapCount === 1) {
-        setTimeout(() => {
-            tapCount = 0; // timeout = single tap → ignore
-        }, 400);
-    } else if (tapCount === 2) {
-        flipProfile();
-        tapCount = 0;                       // reset immediately
-    }                // wait a tiny bit past the limit
+    const now = Date.now();
+    const TIME_LIMIT = 400; // max ms between taps
+
+    if (now - lastTapTime < TIME_LIMIT) {
+        tapCount++;
+    } else {
+        tapCount = 1;
+    }
+
+    lastTapTime = now;
+
+    // Clear any previous timeout
+    if (tapTimeout) clearTimeout(tapTimeout);
+
+    tapTimeout = setTimeout(() => {
+        if (tapCount === 2) {
+            flipProfile();
+        }
+        tapCount = 0;                      // reset
+    }, 10);                   // wait a tiny bit past the limit
 });
-
-
 
 //--------------------------------------------------
 // STYLING (ALL JS, NO CSS NEEDED)
