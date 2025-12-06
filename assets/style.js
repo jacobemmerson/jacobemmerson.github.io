@@ -147,7 +147,7 @@ let lastTapTime = 0;
 let tapCount = 0;
 let tapTimeout = null;
 
-flipContainer.addEventListener('touchend', (e) => {
+document.querySelector('.profilepic-flip-container').addEventListener('touchend', (e) => {
     e.preventDefault();
 
     const now = Date.now();
