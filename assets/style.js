@@ -5,7 +5,7 @@
 // Theme definitions
 const themes = {
   light: {
-    "--basecolor": "#777",
+    "--basecolor": "#616161ff",
     "--accentcolor": "rgba(24, 24, 111, 1)",
     "--highlightcolor": "#111111ff",
     "--backgroundcolor": "#FFFAF0"
@@ -126,7 +126,7 @@ document.querySelector('.profilepic-flip-container').addEventListener('touchend'
 // STYLING (ALL JS, NO CSS NEEDED)
 //--------------------------------------------------
 
-const fontname = "Garamond";
+const fontname = "Georgia";
 const fontweights = [300, 400];
 
 const bodyfontweight = 300;
@@ -152,9 +152,7 @@ const instyearsize = "11px";
 
 // Load Google Fonts
 $("head").append(
-  `<link href="https://fonts.googleapis.com/css2?family=${fontname}:wght@${fontweights.join(
-    ";"
-  )}&display=swap" rel="stylesheet" type="text/css">`
+'<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">'
 );
 
 $("body")

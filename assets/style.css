@@ -55,19 +55,19 @@ a:hover {
     height: 150px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 1.45s cubic-bezier(0.68, -0.65, 0.265, 1.45); /* super bouncy */
+    transition: transform 1.25s cubic-bezier(0.68, -0.40, 0.165, 1.20); /* super bouncy */
 }
 
 .profilepic-flipper.flipped {
-    transform: rotateY(540deg);
+    transform: rotateY(900deg);
 }
 
 .profilepic.face {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border-radius: 0%;
-    filter: grayscale(30%);
+    border-radius: 10%;
+    filter: grayscale(10%);
     position: absolute;
     top: 0; left: 0;
     backface-visibility: hidden;
@@ -104,10 +104,10 @@ a:hover {
 
     .profilepic {
         width: 90px;
-        border-radius: 0%;
+        border-radius: 10%;
         padding-top: 0px !important;
         padding-bottom: 0px !important;
-        filter: grayscale(30%);
+        filter: grayscale(10%);
     }
 
     .menur {
