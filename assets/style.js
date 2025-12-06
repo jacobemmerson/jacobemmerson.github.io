@@ -107,9 +107,6 @@ document.querySelector('.profilepic-flip-container').addEventListener('dblclick'
 });
 
 // support double-tap on mobile
-let lastTapTime = 0;
-let tapCount = 0;
-let tapTimeout = null;
 
 document.querySelector('.profilepic-flip-container').addEventListener('touchend', function(e) {
     e.preventDefault();
@@ -118,7 +115,7 @@ document.querySelector('.profilepic-flip-container').addEventListener('touchend'
     if (tapCount === 1) {
         setTimeout(() => {
             tapCount = 0; // timeout = single tap → ignore
-        }, 300);
+        }, 400);
     } else if (tapCount === 2) {
         flipProfile();
         tapCount = 0;                       // reset immediately
