@@ -114,12 +114,14 @@ let hasSeenConfetti = localStorage.getItem("seenConfetti") === "true";
 
 function fireConfettiOnce() {
   if (!hasSeenConfetti) {
-    confetti({
+    setTimeout(function () {
+      confetti({
       particleCount: 150,
       spread: 80,
       startVelocity: 50,
       origin: getPFPOrigin()
-    });
+    })
+    }, 450);
     localStorage.setItem("seenConfetti", "true");
     hasSeenConfetti = true;
   }
