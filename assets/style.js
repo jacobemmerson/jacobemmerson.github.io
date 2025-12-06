@@ -145,18 +145,15 @@ document.querySelector('.profilepic-flip-container').addEventListener('dblclick'
 });
 
 // support double-tap on mobile
-var lastTap;
-document.querySelector('.profilepic-flip-container').addEventListener('touchend', function (e) {
+let lastTap = 0;
+document.querySelector('.profilepic-flip-container').addEventListener('touchend', function(e) {
     e.preventDefault();
-    var now = new Date().getTime();
-    var timesince = now - mylatesttap;
-    if((timesince < 600) && (timesince > 0)){
-      flipProfile();
-    }else{
-            // too much time to be a doubletap
-          }
-
-    lastTap = new Date().getTime();
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    if (tapLength < 500 && tapLength > 0) {
+        flipProfile();
+    }
+    lastTap = currentTime;
 });
 
 //--------------------------------------------------
