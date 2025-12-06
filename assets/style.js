@@ -1,8 +1,6 @@
-//--------------------------------------------------
-// SMOOTH THEME SYSTEM (ALL JAVASCRIPT)
-//--------------------------------------------------
 
-// Theme definitions
+// Dark/Light mode themes 
+
 const themes = {
   light: {
     "--basecolor": "#616161ff",
@@ -18,6 +16,7 @@ const themes = {
   },
 };
 
+// Invert icon (default black) for dark mode
 const updateIconColor = (theme) => {
   const icons = document.querySelectorAll(".theme-icon");
 
@@ -32,20 +31,20 @@ const updateIconColor = (theme) => {
   });
 };
 
-// Detect system preference
+// detect system preference
 const systemTheme = () =>
   window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
 
-// Get saved theme or default
+// get saved theme or default
 const getTheme = () => localStorage.getItem("theme") || systemTheme();
 
-// Apply theme variables
+// apply theme
 const setTheme = (t) => {
   localStorage.setItem("theme", t);
 
-  // Toggle dark class
+  // toogle dark
   document.documentElement.classList.toggle("dark", t === "dark");
 
   // Apply root CSS variables
@@ -56,7 +55,7 @@ const setTheme = (t) => {
   updateIconColor(t); 
 };
 
-// Initialize theme
+// initialize theme
 setTheme(getTheme());
 
 // Theme toggle
@@ -65,11 +64,7 @@ const toggleTheme = () => {
   setTheme(newTheme);
 };
 
-//--------------------------------------------------
-// GLOBAL SMOOTH TRANSITIONS (APPLIED ONCE)
-//--------------------------------------------------
-
-// Add smooth transitions to ANY element that uses your CSS variables
+// smooth transitions 
 const elementsToSmooth = [
   "html",
   "body",
@@ -91,11 +86,8 @@ elementsToSmooth.forEach((sel) => {
   });
 });
 
-// ————————————————————————————————
-// CONFETTI ON FIRST FLIP
-// ————————————————————————————————
-
-// check if confetti has been shown before
+// profile picture flipping
+// confetti on first flip
 
 const pfp = document.querySelector('.profilepic-flip-container');
 
@@ -109,9 +101,7 @@ function getPFPOrigin() {
   return { x, y };
 }
 
-
 let hasSeenConfetti = localStorage.getItem("seenConfetti") === "true";
-
 function fireConfettiOnce() {
   if (!hasSeenConfetti) {
     setTimeout(function () {
@@ -127,13 +117,7 @@ function fireConfettiOnce() {
   }
 }
 
-
-// ————————————————————————————————
-// PROFILE PICTURE FLIPPING (double click)
-// ————————————————————————————————
-
 const flipper = document.querySelector('.profilepic-flipper');
-
 function flipProfile() {
     flipper.classList.toggle('flipped');
     fireConfettiOnce()
@@ -156,9 +140,7 @@ document.querySelector('.profilepic-flip-container').addEventListener('touchend'
     lastTap = currentTime;
 });
 
-//--------------------------------------------------
-// STYLING (ALL JS, NO CSS NEEDED)
-//--------------------------------------------------
+// default styling from main branch
 
 const fontname = "Georgia";
 const fontweights = [300, 400];
@@ -184,7 +166,7 @@ const selfstyle = "normal";
 const insttitlesize = "12px";
 const instyearsize = "11px";
 
-// Load Google Fonts
+// load Google Fonts
 $("head").append(
 '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">'
 );

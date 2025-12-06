@@ -55,7 +55,7 @@ a:hover {
     height: 150px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 1.25s cubic-bezier(0.68, -0.40, 0.165, 1.20); /* super bouncy */
+    transition: transform 1.25s cubic-bezier(0.68, -0.40, 0.165, 1.20); 
 }
 
 .profilepic-flipper.flipped {
