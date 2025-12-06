@@ -87,7 +87,7 @@ const elementsToSmooth = [
 elementsToSmooth.forEach((sel) => {
   document.querySelectorAll(sel).forEach((el) => {
     el.style.transition =
-      "background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease";
+      "background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease";
   });
 });
 
