@@ -114,26 +114,15 @@ let tapTimeout = null;
 document.querySelector('.profilepic-flip-container').addEventListener('touchend', function(e) {
     e.preventDefault();
 
-    const now = Date.now();
-    const TIME_LIMIT = 500;
-
-    if (now - lastTapTime < TIME_LIMIT) {
-        tapCount++;
-    } else {
-        tapCount = 1;
-    }
-
-    lastTapTime = now;
-
-    // Clear any previous timeout
-    if (tapTimeout) clearTimeout(tapTimeout);
-
-    tapTimeout = setTimeout(() => {
-        if (tapCount === 2) {
-            flipProfile();
-        }
-        tapCount = 0;                      // reset
-    }, TIME_LIMIT + 50);                   // wait a tiny bit past the limit
+    tapCount++;
+    if (tapCount === 1) {
+        setTimeout(() => {
+            tapCount = 0; // timeout = single tap → ignore
+        }, 300);
+    } else if (tapCount === 2) {
+        flipProfile();
+        tapCount = 0;                       // reset immediately
+    }                // wait a tiny bit past the limit
 });
 
 //--------------------------------------------------
