@@ -66,7 +66,7 @@ a:hover {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border-radius: 10%;
+    border-radius: 8%;
     filter: grayscale(10%);
     position: absolute;
     top: 0; left: 0;
@@ -104,7 +104,7 @@ a:hover {
 
     .profilepic {
         width: 90px;
-        border-radius: 10%;
+        border-radius: 8%;
         padding-top: 0px !important;
         padding-bottom: 0px !important;
         filter: grayscale(10%);
