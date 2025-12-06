@@ -92,6 +92,41 @@ elementsToSmooth.forEach((sel) => {
 });
 
 // ————————————————————————————————
+// CONFETTI ON FIRST FLIP
+// ————————————————————————————————
+
+// check if confetti has been shown before
+
+const pfp = document.querySelector('.profilepic-flip-container');
+
+function getPFPOrigin() {
+  const rect = pfp.getBoundingClientRect();
+
+  // compute center in normalized coordinates (0–1)
+  const x = (rect.left + rect.width / 2) / window.innerWidth;
+  const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+  return { x, y };
+}
+
+
+let hasSeenConfetti = localStorage.getItem("seenConfetti") === "true";
+
+function fireConfettiOnce() {
+  if (!hasSeenConfetti) {
+    confetti({
+      particleCount: 150,
+      spread: 80,
+      startVelocity: 50,
+      origin: getPFPOrigin()
+    });
+    localStorage.setItem("seenConfetti", "true");
+    hasSeenConfetti = true;
+  }
+}
+
+
+// ————————————————————————————————
 // PROFILE PICTURE FLIPPING (double click)
 // ————————————————————————————————
 
@@ -99,6 +134,7 @@ const flipper = document.querySelector('.profilepic-flipper');
 
 function flipProfile() {
     flipper.classList.toggle('flipped');
+    fireConfettiOnce()
 }
 
 document.querySelector('.profilepic-flip-container').addEventListener('dblclick', function(e) {
@@ -121,6 +157,8 @@ document.querySelector('.profilepic-flip-container').addEventListener('touchend'
         tapCount = 0;                       // reset immediately
     }                // wait a tiny bit past the limit
 });
+
+
 
 //--------------------------------------------------
 // STYLING (ALL JS, NO CSS NEEDED)
