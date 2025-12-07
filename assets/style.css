@@ -48,7 +48,7 @@ a:hover {
     -ms-user-select: none; 
     user-select: none;
     touch-action: manipulation;
-    cursor: help;
+    cursor: pointer;
 }
 
 .profilepic-flipper {
