@@ -48,6 +48,7 @@ a:hover {
     -ms-user-select: none; 
     user-select: none;
     touch-action: manipulation;
+    cursor: help;
 }
 
 .profilepic-flipper {
@@ -67,7 +68,7 @@ a:hover {
     height: 150px;
     object-fit: cover;
     border-radius: 8%;
-    filter: grayscale(10%);
+    filter: grayscale(15%);
     position: absolute;
     top: 0; left: 0;
     backface-visibility: hidden;
@@ -77,6 +78,7 @@ a:hover {
 /* Back image starts rotated 180° so it's hidden initially */
 .profilepic.face.back {
     transform: rotateY(180deg);
+    filter: grayscale(0%);
 }
 
 .context {
@@ -107,7 +109,7 @@ a:hover {
         border-radius: 8%;
         padding-top: 0px !important;
         padding-bottom: 0px !important;
-        filter: grayscale(10%);
+        filter: grayscale(15%);
     }
 
     .menur {

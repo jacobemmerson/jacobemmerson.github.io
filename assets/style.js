@@ -213,4 +213,10 @@ $(".institution")
   .css("color", "var(--highlightcolor)")
   .css("font-size", insttitlesize);
 
+$(".credits")
+  .css("color", "var(--basecolor)")
+  .css("text-decoration", "None")
+  .css("opacity", 0.75)
+  .css("font-size", insttitlesize);
+
 $(".years").css("color", "var(--accentcolor)").css("font-size", instyearsize);
