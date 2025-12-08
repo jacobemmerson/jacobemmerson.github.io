@@ -23,7 +23,13 @@
             <a href="https://github.com/SebastinSanty/minimal-research-theme" target="_blank">source repo</a>
             <a href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" target="_blank">main font</a>
             <a href="https://www.iconpacks.net/free-icon/sun-3337.html" target="_blank">theme icon</a>
-            <a href="https://candiewrapper.art" target="_blank">easter egg artist</a>
+            <a id="seen" href="https://candiewrapper.art" target="_blank">easter egg artist</a>
+            <span id="unseen" style="display:none">did you find the easter egg?</span>
         </div>
+        <script>
+            let seen = localStorage.getItem("seenConfetti") === "true";
+            document.getElementById("seen").style.display = seen ? "inline" : "none";
+            document.getElementById("unseen").style.display = seen ? "none" : "inline";
+        </script>
     </body>
 </html>
