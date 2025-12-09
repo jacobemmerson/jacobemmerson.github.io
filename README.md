@@ -5,4 +5,4 @@ Just a plain, simple and elegant one-page theme for research/academia forked fro
 ### Modifications
 - added dark theme toggle and smoothing functions
 - added credits
-- added an easter egg :)
+- added an easter egg (hint: try liking my picture)
