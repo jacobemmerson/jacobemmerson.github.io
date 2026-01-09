@@ -73,6 +73,7 @@ a:hover {
     top: 0; left: 0;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 
 /* Back image starts rotated 180° so it's hidden initially */
