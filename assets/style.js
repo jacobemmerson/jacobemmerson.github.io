@@ -81,8 +81,10 @@ const elementsToSmooth = [
 
 elementsToSmooth.forEach((sel) => {
   document.querySelectorAll(sel).forEach((el) => {
+    // opacity/transform are here too so this inline rule doesn't clobber the
+    // scroll-reveal transition defined in .reveal
     el.style.transition =
-      "background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease";
+      "background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, opacity 0.6s ease-out, transform 0.6s ease-out";
   });
 });
 
@@ -146,12 +148,12 @@ const fontname = "Georgia";
 const fontweights = [300, 400];
 
 const bodyfontweight = 300;
-const bodyfontsize = "12pt";
+const bodyfontsize = "13pt";
 const adecoration = "underline dotted";
 const menudecoration = "none";
-const headerfontsize = "18pt";
+const headerfontsize = "19pt";
 const headerdecoration = "none";
-const namefontsize = "23pt";
+const namefontsize = "25pt";
 const namepadding = "0px";
 
 const ptitlefontsize = bodyfontsize;
@@ -163,8 +165,8 @@ const selfweight = bodyfontweight;
 const selfdecoration = "none";
 const selfstyle = "normal";
 
-const insttitlesize = "12px";
-const instyearsize = "11px";
+const insttitlesize = "13px";
+const instyearsize = "12px";
 
 // load Google Fonts
 $("head").append(
@@ -182,7 +184,7 @@ $("a").css("color", "var(--accentcolor)").css("text-decoration", adecoration);
 
 $(".menulink")
   .css("color", "var(--basecolor)")
-  .css("font-size", "15pt")
+  .css("font-size", "16pt")
   .css("text-decoration", menudecoration);
 
 $(".header")
@@ -220,3 +222,45 @@ $(".credits")
   .css("font-size", insttitlesize);
 
 $(".years").css("color", "var(--accentcolor)").css("font-size", instyearsize);
+
+// fade content in as it scrolls into view
+
+const revealSelectors = [
+  ".about .header",
+  ".about .paper",
+  ".about .row.text-center .mx-auto"
+];
+
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  revealSelectors.forEach((sel) => {
+    document.querySelectorAll(sel).forEach((el) => {
+      // anything already on screen at load renders normally, so it can't flash in
+      if (el.getBoundingClientRect().top < window.innerHeight) return;
+
+      el.classList.add("reveal");
+      revealObserver.observe(el);
+    });
+  });
+
+  document.querySelectorAll(".about .row.text-center").forEach((row) => {
+    row.querySelectorAll(".mx-auto.reveal").forEach((card, index) => {
+      card.style.transitionDelay = `${index * 80}ms`;
+    });
+  });
+}

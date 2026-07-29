@@ -12,7 +12,30 @@ a:hover {
 }
 
 .noter {
-    font-size: 9pt;
+    font-size: 10pt;
+}
+
+/* Applied by style.js, never in the markup: if JS fails, content stays visible. */
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.revealed {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 .tagsep {
