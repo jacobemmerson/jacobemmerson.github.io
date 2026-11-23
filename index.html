@@ -20,6 +20,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <!-- Runs before first paint so the saved/system theme never flashes the wrong colors -->
+    <script>
+      {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.classList.toggle("dark", (savedTheme || (prefersDark ? "dark" : "light")) === "dark");
+      }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
     <meta property="og:title" content="Jacob Tae Emmerson - Homepage">
@@ -34,7 +45,7 @@
                 <input class="theme-icon", type="image" onclick="toggleTheme()" src="images/theme.png" width="28px"/>
 
                 <p class="name">J. Tae Emmerson</p>
-                <p class="context"> /teɪ/; pronounced tay<br>jemmerson@ucsd.edu</p>
+                <p class="context"> /teɪ/; pronounced tay<br>lastname@ucsd.edu</p>
 
                 <div class="profilepic-flip-container"> 
                     <div class="profilepic-flipper">
@@ -45,21 +56,18 @@
                     </div>
                 </div>
 
-                <div class="pt-2"><a class="menulink" target="_blank" href="https://github.com/jacobemmerson">github</a></div>
+                <div class="pt-2"><a class="menulink" target="_blank" href="https://scholar.google.com/citations?user=YKG43xoAAAAJ&hl=en">google scholar</a></div>
+                <div class=""><a class="menulink" target="_blank" href="https://github.com/jacobemmerson">github</a></div>
                 <div class=""><a class="menulink" target="_blank" href="https://www.linkedin.com/in/jtemmerson/">linkedin</a></div>
-                <div class=""><a class="menulink" target="_blank" href="https://scholar.google.com/citations?user=YKG43xoAAAAJ&hl=en">google scholar</a></div>
-                <div class=""><a class="menulink" target="_blank" href="https://rabbithole.emmerson.dev">rabbit hole</a></div>
                 <!-- <div class="">travel history</div> -->
                 <!-- <div class="">this template</div> -->
                 </div>
             </div>
             <div class="col-md-8 pt-5 about">
-                I am a Masters student at <a class="in-text" href="https://jacobsschool.ucsd.edu" target="_blank">UC San Diego</a>. My interests span multimodal learning, inference optimization, AI safety, fairness and reasoning.
+              I am a current graduate student at <a class="in-text" href="https://www.ucsd.edu" traget="_blank">UC San Diego</a> and incoming intern at <a class="int-text" href="https://www.amd.com/en/solutions/ai.html" target="_blank">AMD</a>.
                 
-                Currently, I work at the <a class"in-text" href="https://vectorinstitute.ai" target="_blank">Vector Institute</a> under the supervision of Professor <a class="in-text"
-                href="https://zhijing-jin.com/home/" target="_blank">Zhijing Jin</a>, affiliated with the <a class="in-text" href="https://www.utoronto.ca" target="_blank">University of Toronto</a>, to make models safer and more governable.<br><br> 
-
-                Previously, I graduated with a Bachelor of Science in Computer Science from the <a class="in-text" href="https://www.sci.pitt.edu" target="_blank">University of Pittsburgh</a> in 2024. While earning my degree, I worked part-time as a researcher and engineer at <a class="in-text" href="https://signaturedx.com" target="_blank">Signature Diagnostics</a> with Professor <a class="in-text" href="http://paulrcohen.github.io" target="_blank">Paul Cohen</a>. After graduating, I was fortunate to work with Professor <a class="in-text" href="https://people.cs.pitt.edu/~kovashka/" target="_blank">Adriana Kovashka</a> and Professor <a class="in-text" href="https://ryanzshi.github.io" target="_blank">Ryan Shi</a>. <br><br>
+                Previously, I worked at the <a class="in-text" href="https://vectorinstitute.ai" target="_blank">Vector Institute</a> under the supervision of Professor <a class="in-text"
+                href="https://zhijing-jin.com/home/" target="_blank">Zhijing Jin</a>  to make models safer and more governable. As an undergraduate, I worked part-time as a researcher and engineer at <a class="in-text" href="https://signaturedx.com" target="_blank">Signature Diagnostics</a> with Professor <a class="in-text" href="http://paulrcohen.github.io" target="_blank">Paul Cohen</a>. After graduating, I was fortunate to work with Professor <a class="in-text" href="https://people.cs.pitt.edu/~kovashka/" target="_blank">Adriana Kovashka</a> and Professor <a class="in-text" href="https://ryanzshi.github.io" target="_blank">Ryan Shi</a>. <br><br>
 
                 You might find me in either Pittsburgh, PA or San Diego, CA depending on the time of the year. If you're interested in a quick coffee chat or collaborating together, feel free to reach out! 
 
@@ -68,7 +76,7 @@
                  <p class="paper my-2 pl-2">
                      <span class="papertitle">CauSciBench: Can LLMs Automate Causal Inference in Real-World Scientific Research?</span><br>
                      Sawal Acharya, Terry Jingchen Zhang, Andrew Kim, Rahul Babu Shrestha, Xianlin Sun, Pepijn Cobben, Maximilian Mordig, <span class="thisauthor">Tae Emmerson</span>, Anahita Haghighat, Furkan Danisman, Yuen Chen, Clijo Jose, Andrei Ioan Muresanu, Justin Cui, Jiarui Liu, Yahang Qi, Punya Syon Pandey, Yinya Huang, Bernhard Schölkopf, Zhijing Jin
-                     <!--<span class="noter"> (* = Equal Contribution)</span><br>-->
+                     <!--<span class="noter"> (* = Equal Contribution)</span><br>--> <br>
                      <span class="conf"><a class="confshort" href="https://icml.cc">ICML'26</a> | International Conference on Machine Learning</span><br>
 
                      <a class="tag" href="https://openreview.net/pdf?id=v9d4RqaPFO" target="_blank">pdf</a><span class="tagsep">|</span><a class="tag" target="_blank" href="https://openreview.net/forum?id=v9d4RqaPFO">abstract</a>
@@ -78,7 +86,7 @@
                  <p class="paper my-2 pl-2">
                      <span class="papertitle">Causal AI Scientist: Towards End-to-End Causal Inference with Large Language Models</span><br>
                      Sawal Acharya, Rahul Babu Shrestha, <span class="thisauthor">Tae Emmerson</span>, Vishal Verma, Devansh Bhardwaj, Samuel Simko, Punya Syon Pandey, Anahita Haghighat, Yongjin Yang, Dominik Janzing, Mrinmaya Sachan, Bernhard Schölkopf, Zhijing Jin
-                     <!--<span class="noter"> (* = Equal Contribution)</span><br>-->
+                     <!--<span class="noter"> (* = Equal Contribution)</span><br>--> <br>
                      <span class="conf"><a class="confshort" href="https://icml.cc">ICML'26 Workshop</a> | Workshop on AI for Math, CS &amp; ML</span><br>
 
                      <a class="tag" href="https://openreview.net/pdf?id=rIAuqhy6S0" target="_blank">pdf</a><span class="tagsep">|</span><a class="tag" target="_blank" href="https://openreview.net/forum?id=rIAuqhy6S0">abstract</a>
@@ -88,7 +96,7 @@
                  <p class="paper my-2 pl-2">
                      <span class="papertitle">A Multimodal Recaptioning Framework to Account for Perceptual Diversity Across Languages in Vision-Language Modeling</span><br>
                      Kyle Buettner, <span class="thisauthor">Tae Emmerson</span>, Adriana Kovashka
-                     <!--<span class="noter"> (* = Equal Contribution)</span><br>-->
+                     <!--<span class="noter"> (* = Equal Contribution)</span><br>--> <br>
                      <span class="conf"><a class="confshort" href="https://2025.aaclnet.org">IJCNLP-AACL'25</a> | International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the Association for Computational Linguistics</span><br>
                     
                      <a class="tag" href="https://arxiv.org/pdf/2504.14359" target="_blank">pdf</a><span class="tagsep">|</span><a class="tag" target="_blank" href="https://arxiv.org/abs/2504.14359">abstract</a>
@@ -120,12 +128,12 @@
                     <div class="mx-auto mt-2">
                         <img class="img-fluid instilogo p-1" src="https://cdn.brandfetch.io/ideJyj7Kn_/w/851/h/851/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1715060291176">
                         <div class="institution">Research Intern<br>Vector Institute</div>
-                        <div class="years">2025 - Present</div>
+                        <div class="years">2025 - 2026</div>
                     </div>
                     <div class="mx-auto mt-2">
                         <img class="img-fluid instilogo p-1" src="images/esai.png">
                         <div class="institution">Technical Member<br>EuroSafeAI</div>
-                        <div class="years">2026 - Present</div>
+                        <div class="years">2026 - 2026</div>
                     </div>
                 </div>
                 <div class="row text-center py-4">

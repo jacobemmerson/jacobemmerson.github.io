@@ -1,14 +1,113 @@
-.instilogo {
-    height: 50px;
-    filter: grayscale(20%);
+:root {
+    --basecolor: #4A5568;
+    --accentcolor: #2F5D9E;
+    --highlightcolor: #1E293B;
+    --backgroundcolor: #F1F4F8;
+    --bordercolor: #DDE3EA;
+    --iconfilter: brightness(0.75);
+    --theme-transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+:root.dark {
+    --basecolor: #9AA6B8;
+    --accentcolor: #8FB3E8;
+    --highlightcolor: #E2E8F0;
+    --backgroundcolor: #171C24;
+    --bordercolor: #2A3240;
+    --iconfilter: invert(1) brightness(0.75);
+}
+
+html, body, a, input, .header, .name, .papertitle, .thisauthor, .institution, .years {
+    transition: var(--theme-transition);
+}
+
+body {
+    font-family: Inter, system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 11.5pt;
+    line-height: 1.65;
+    color: var(--basecolor);
+    background-color: var(--backgroundcolor);
+}
+
+a {
+    color: var(--accentcolor);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
 }
 
 a:hover {
-    /* font-weight: 400; */
-    text-decoration: none;
+    color: var(--accentcolor);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
     transition-duration: 0.3s;
     transition-timing-function: linear;
-    /* color: #444; */
+}
+
+.theme-icon {
+    filter: var(--iconfilter);
+}
+
+.name {
+    color: var(--highlightcolor);
+    font-size: 22pt;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.menulink {
+    color: var(--basecolor);
+    font-size: 13pt;
+    text-decoration: none;
+}
+
+.menulink:hover {
+    color: var(--highlightcolor);
+    text-decoration: none;
+}
+
+.header {
+    color: var(--highlightcolor);
+    font-size: 16pt;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.papertitle {
+    color: var(--highlightcolor);
+    font-weight: 500;
+}
+
+.thisauthor {
+    color: var(--highlightcolor);
+    font-weight: 600;
+}
+
+.institution {
+    color: var(--highlightcolor);
+    font-size: 13px;
+}
+
+.years {
+    color: var(--basecolor);
+    font-size: 12px;
+}
+
+.credits,
+.credits:hover {
+    color: var(--basecolor);
+    text-decoration: none;
+    opacity: 0.6;
+    font-size: 13px;
+}
+
+.instilogo {
+    height: 50px;
+    filter: grayscale(20%);
 }
 
 .noter {
@@ -19,7 +118,7 @@ a:hover {
 .reveal {
     opacity: 0;
     transform: translateY(14px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: var(--theme-transition), opacity 0.6s ease-out, transform 0.6s ease-out;
     will-change: opacity, transform;
 }
 
@@ -47,7 +146,7 @@ a:hover {
 }
 
 .confshort {
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .conf {
@@ -56,11 +155,7 @@ a:hover {
 }
 
 .paper {
-    border-left: 1px solid #ddd;
-}
-
-.menulink:hover {
-    color: #111;
+    border-left: 2px solid var(--bordercolor);
 }
 
 .profilepic-flip-container {
