@@ -1,35 +1,22 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <style>
-            body {background-color: #171C24;}
-            .credits {
-                height: 95vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                flex-direction: column;
-                gap: 0.5em;
-                color: #9AA6B8;
-            }
-            a {text-decoration: none; color: inherit;}
-            a:hover {font-weight: bold;}
-        </style>
-    </head>
-    <body>
-        <div class="credits">
-            <h4>credits</h4>
-            <a href="https://github.com/SebastinSanty/minimal-research-theme" target="_blank">source repo</a>
-            <a href="https://fonts.google.com/specimen/Inter" target="_blank">main font</a>
-            <a href="https://www.iconpacks.net/free-icon/sun-3337.html" target="_blank">theme icon</a>
-            <a id="seen" href="https://candiewrapper.art" target="_blank">easter egg artist</a>
-            <span id="unseen" style="display:none">did you find the easter egg?</span>
-        </div>
-        <script>
-            let seen = localStorage.getItem("seenConfetti") === "true";
-            document.getElementById("seen").style.display = seen ? "inline" : "none";
-            document.getElementById("unseen").style.display = seen ? "none" : "inline";
-        </script>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Credits - Jacob Tae Emmerson</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="../assets/style.css">
+    <script src="../assets/theme.js"></script>
+  </head>
+  <body class="credits-page">
+    <h2>credits</h2>
+    <a href="https://github.com/SebastinSanty/minimal-research-theme" target="_blank" rel="noopener">source repo</a>
+    <a href="https://fonts.google.com/noto/specimen/Noto+Sans" target="_blank" rel="noopener">main font</a>
+    <a id="seen" href="https://candiewrapper.art" target="_blank" rel="noopener" hidden>easter egg artist</a>
+    <span id="unseen" hidden>did you find the easter egg?</span>
+    <script>
+      const hasSeenEasterEgg = localStorage.getItem("seenConfetti") === "true";
+      document.getElementById(hasSeenEasterEgg ? "seen" : "unseen").hidden = false;
+    </script>
+  </body>
 </html>

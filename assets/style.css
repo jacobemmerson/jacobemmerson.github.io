@@ -3,9 +3,12 @@
     --accentcolor: #2F5D9E;
     --highlightcolor: #1E293B;
     --backgroundcolor: #F1F4F8;
-    --bordercolor: #DDE3EA;
-    --iconfilter: brightness(0.75);
-    --theme-transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, text-decoration-color 0.25s ease;
+
+    --label-width: 8rem;
+    --years-width: 7rem;
+    --photo-size: 6rem;
+    --secondary-size: 0.875rem;
+    --theme-transition: background-color 0.25s ease, color 0.25s ease, text-decoration-color 0.25s ease;
 }
 
 :root.dark {
@@ -13,24 +16,41 @@
     --accentcolor: #8FB3E8;
     --highlightcolor: #E2E8F0;
     --backgroundcolor: #171C24;
-    --bordercolor: #2A3240;
-    --iconfilter: invert(1) brightness(0.75);
 }
 
-html, body, a, input, .header, .name, .papertitle, .thisauthor, .institution, .years {
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body, a, button, h1, h2, .papertitle, .thisauthor {
     transition: var(--theme-transition);
 }
 
+html {
+    background-color: var(--backgroundcolor);
+}
+
 body {
-    font-family: Inter, system-ui, sans-serif;
-    font-weight: 400;
-    font-size: 11.5pt;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 3rem;
+    font-family: "Noto Sans", system-ui, sans-serif;
+    font-size: 1rem;
     line-height: 1.65;
     color: var(--basecolor);
     background-color: var(--backgroundcolor);
 }
 
-a {
+h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a, .theme-toggle {
     color: var(--accentcolor);
     text-decoration: underline;
     text-decoration-thickness: 1px;
@@ -38,43 +58,70 @@ a {
     text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
 }
 
-a:hover {
-    color: var(--accentcolor);
-    text-decoration: underline;
+a:hover, .theme-toggle:hover {
     text-decoration-color: currentColor;
-    transition-duration: 0.3s;
-    transition-timing-function: linear;
 }
 
-.theme-icon {
-    filter: var(--iconfilter);
+.theme-toggle {
+    font: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
 }
 
-.name {
+/* Header and footer sit in the content column, so the section labels hang in the left margin. */
+header, footer {
+    margin-left: var(--label-width);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+h1 {
     color: var(--highlightcolor);
-    font-size: 22pt;
+    font-size: 1.75rem;
     font-weight: 600;
     letter-spacing: -0.02em;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    line-height: 1.3;
 }
 
-.menulink {
-    color: var(--basecolor);
-    font-size: 13pt;
-    text-decoration: none;
+.context, h2, .authors, .venue, .paperlinks, .years, .links, footer {
+    font-size: var(--secondary-size);
 }
 
-.menulink:hover {
-    color: var(--highlightcolor);
-    text-decoration: none;
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+    margin-top: 0.5rem;
 }
 
-.header {
-    color: var(--highlightcolor);
-    font-size: 16pt;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+section {
+    display: grid;
+    grid-template-columns: var(--label-width) 1fr;
+    align-items: baseline;
+    margin-top: 3rem;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+section p + p {
+    margin-top: 1rem;
+}
+
+.paper + .paper {
+    margin-top: 1.5rem;
+}
+
+.paper > * {
+    display: block;
 }
 
 .papertitle {
@@ -87,157 +134,103 @@ a:hover {
     font-weight: 600;
 }
 
-.institution {
-    color: var(--highlightcolor);
-    font-size: 13px;
-}
-
-.years {
-    color: var(--basecolor);
-    font-size: 12px;
-}
-
-.credits,
-.credits:hover {
-    color: var(--basecolor);
-    text-decoration: none;
-    opacity: 0.6;
-    font-size: 13px;
-}
-
-.instilogo {
-    height: 50px;
-    filter: grayscale(20%);
-}
-
-.noter {
-    font-size: 10pt;
-}
-
-/* Applied by style.js, never in the markup: if JS fails, content stays visible. */
-.reveal {
-    opacity: 0;
-    transform: translateY(14px);
-    transition: var(--theme-transition), opacity 0.6s ease-out, transform 0.6s ease-out;
-    will-change: opacity, transform;
-}
-
-.reveal.revealed {
-    opacity: 1;
-    transform: none;
-    will-change: auto;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .reveal.revealed {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
-
-.tagsep {
-    padding: 4px;
-}
-
-.tag {
-    padding-right: 2px;
-}
-
-.confshort {
+.venue a {
     font-weight: 500;
 }
 
-.conf {
-    display: inline-block;
-    padding-bottom: 4px;
+.dated {
+    display: grid;
+    grid-template-columns: var(--years-width) 1fr;
+    align-items: baseline;
 }
 
-.paper {
-    border-left: 2px solid var(--bordercolor);
+.dated span:last-child {
+    color: var(--highlightcolor);
+}
+
+.years {
+    font-variant-numeric: tabular-nums;
+}
+
+footer {
+    margin-top: 3rem;
 }
 
 .profilepic-flip-container {
+    flex: none;
     perspective: 1200px;
-    width: 150px;
-    -webkit-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
+    width: var(--photo-size);
+    -webkit-user-select: none;
     user-select: none;
     touch-action: manipulation;
     cursor: pointer;
 }
 
 .profilepic-flipper {
-    width: 100%;
-    height: 150px;
+    height: var(--photo-size);
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 1.25s cubic-bezier(0.68, -0.40, 0.165, 1.20); 
+    transition: transform 1.25s cubic-bezier(0.68, -0.40, 0.165, 1.20);
 }
 
 .profilepic-flipper.flipped {
     transform: rotateY(900deg);
 }
 
-.profilepic.face {
-    width: 150px;
-    height: 150px;
+.profilepic {
+    width: var(--photo-size);
+    height: var(--photo-size);
     object-fit: cover;
     border-radius: 8%;
     filter: grayscale(15%);
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transform-style: preserve-3d;
 }
 
-/* Back image starts rotated 180° so it's hidden initially */
-.profilepic.face.back {
+/* The back face starts rotated 180° so it is hidden until the flip. */
+.profilepic.back {
     transform: rotateY(180deg);
-    filter: grayscale(0%);
+    filter: none;
 }
 
-.context {
-    padding: 0;
-    margin-top: 0;
+.credits-page {
+    min-height: 100vh;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-@media (min-width: 768px) {
-    .fixed-posi {
-        /* width: 50%;
-            margin-left: 50%;
-            min-height:100%; */
-        position: fixed;
+@media (max-width: 40rem) {
+    :root {
+        --photo-size: 4.5rem;
+    }
+
+    body {
+        padding-top: 2.5rem;
+    }
+
+    header, footer {
+        margin-left: 0;
+    }
+
+    section {
+        grid-template-columns: 1fr;
+        row-gap: 0.5rem;
+    }
+
+    .dated {
+        --years-width: 6rem;
     }
 }
 
-@media only screen and (max-width: 900px) {
-    .allstuff {
-        padding-top: 0px !important;
+@media (prefers-reduced-motion: reduce) {
+    .profilepic-flipper {
+        transition: none;
     }
-
-    .allstuffp {
-        padding-top: 0px !important;
-    }
-
-    .profilepic {
-        width: 90px;
-        border-radius: 8%;
-        padding-top: 0px !important;
-        padding-bottom: 0px !important;
-        filter: grayscale(15%);
-    }
-
-    .menur {
-        padding-top: 18px !important;
-    }
-
 }
-
-/* .thisauthor {
-          color: #111;
-          text-decoration: underline;
-    } */

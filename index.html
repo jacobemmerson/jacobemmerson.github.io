@@ -1,159 +1,121 @@
 <!doctype html>
 <html lang="en">
   <head>
-
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="google-site-verification" content="j4JJgKBC4oCuAo1PZ9fuGI8SvCcSS_rY7iA5nHYtZ8M" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Researching how to ensure new technology makes a positive societal impact through safety, alignment, and offline behavioral guarantees. Graduated from the Unviersity of Pittsburgh and currently affiliated with the Unviersity of Toronto. Incoming at UC San Diego.">
+    <meta name="google-site-verification" content="j4JJgKBC4oCuAo1PZ9fuGI8SvCcSS_rY7iA5nHYtZ8M">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Graduate student at UC San Diego working on AI safety, alignment, and governable models. Previously at the Vector Institute and the University of Pittsburgh.">
     <meta name="author" content="Jacob Tae Emmerson">
-    <meta name="theme-color" content="#222222">
-
-    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Homepage" />
-    <link rel="manifest" href="/images/favicon/site.webmanifest" />
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-    <!-- Runs before first paint so the saved/system theme never flashes the wrong colors -->
-    <script>
-      {
-      const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.classList.toggle("dark", (savedTheme || (prefersDark ? "dark" : "light")) === "dark");
-      }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    
+    <meta name="theme-color" content="#171C24">
     <meta property="og:title" content="Jacob Tae Emmerson - Homepage">
     <title>Jacob Tae Emmerson</title>
+
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Homepage">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <script src="assets/theme.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script defer src="assets/style.js"></script>
   </head>
   <body>
-    <!-- <h1>Hello, world!</h1> -->
-    <div class="container pt-5 allstuffp">
-        <div class="row pt-5 allstuff">
-            <div class="col-md-4 pt-5">
-                <div class="fixed-posi">
-                <input class="theme-icon", type="image" onclick="toggleTheme()" src="images/theme.png" width="28px"/>
-
-                <p class="name">J. Tae Emmerson</p>
-                <p class="context"> /teɪ/; pronounced tay<br>lastname@ucsd.edu</p>
-
-                <div class="profilepic-flip-container"> 
-                    <div class="profilepic-flipper">
-                        <!-- front -->
-                        <img src="images/me.png" class="profilepic face" alt="me (front)">
-                        <!-- back -->
-                        <img src="images/dog.png" class="profilepic face back" alt="the dog">
-                    </div>
-                </div>
-
-                <div class="pt-2"><a class="menulink" target="_blank" href="https://scholar.google.com/citations?user=YKG43xoAAAAJ&hl=en">google scholar</a></div>
-                <div class=""><a class="menulink" target="_blank" href="https://github.com/jacobemmerson">github</a></div>
-                <div class=""><a class="menulink" target="_blank" href="https://www.linkedin.com/in/jtemmerson/">linkedin</a></div>
-                <!-- <div class="">travel history</div> -->
-                <!-- <div class="">this template</div> -->
-                </div>
-            </div>
-            <div class="col-md-8 pt-5 about">
-              I am a current graduate student at <a class="in-text" href="https://www.ucsd.edu" traget="_blank">UC San Diego</a> and incoming intern at <a class="int-text" href="https://www.amd.com/en/solutions/ai.html" target="_blank">AMD</a>.
-                
-                Previously, I worked at the <a class="in-text" href="https://vectorinstitute.ai" target="_blank">Vector Institute</a> under the supervision of Professor <a class="in-text"
-                href="https://zhijing-jin.com/home/" target="_blank">Zhijing Jin</a>  to make models safer and more governable. As an undergraduate, I worked part-time as a researcher and engineer at <a class="in-text" href="https://signaturedx.com" target="_blank">Signature Diagnostics</a> with Professor <a class="in-text" href="http://paulrcohen.github.io" target="_blank">Paul Cohen</a>. After graduating, I was fortunate to work with Professor <a class="in-text" href="https://people.cs.pitt.edu/~kovashka/" target="_blank">Adriana Kovashka</a> and Professor <a class="in-text" href="https://ryanzshi.github.io" target="_blank">Ryan Shi</a>. <br><br>
-
-                You might find me in either Pittsburgh, PA or San Diego, CA depending on the time of the year. If you're interested in a quick coffee chat or collaborating together, feel free to reach out! 
-
-                 <p class="header pt-5">Publications</p>
-                 <div class="py-2">
-                 <p class="paper my-2 pl-2">
-                     <span class="papertitle">CauSciBench: Can LLMs Automate Causal Inference in Real-World Scientific Research?</span><br>
-                     Sawal Acharya, Terry Jingchen Zhang, Andrew Kim, Rahul Babu Shrestha, Xianlin Sun, Pepijn Cobben, Maximilian Mordig, <span class="thisauthor">Tae Emmerson</span>, Anahita Haghighat, Furkan Danisman, Yuen Chen, Clijo Jose, Andrei Ioan Muresanu, Justin Cui, Jiarui Liu, Yahang Qi, Punya Syon Pandey, Yinya Huang, Bernhard Schölkopf, Zhijing Jin
-                     <!--<span class="noter"> (* = Equal Contribution)</span><br>--> <br>
-                     <span class="conf"><a class="confshort" href="https://icml.cc">ICML'26</a> | International Conference on Machine Learning</span><br>
-
-                     <a class="tag" href="https://openreview.net/pdf?id=v9d4RqaPFO" target="_blank">pdf</a><span class="tagsep">|</span><a class="tag" target="_blank" href="https://openreview.net/forum?id=v9d4RqaPFO">abstract</a>
-                 </p>
-                 </div>
-                 <div class="py-2">
-                 <p class="paper my-2 pl-2">
-                     <span class="papertitle">Causal AI Scientist: Towards End-to-End Causal Inference with Large Language Models</span><br>
-                     Sawal Acharya, Rahul Babu Shrestha, <span class="thisauthor">Tae Emmerson</span>, Vishal Verma, Devansh Bhardwaj, Samuel Simko, Punya Syon Pandey, Anahita Haghighat, Yongjin Yang, Dominik Janzing, Mrinmaya Sachan, Bernhard Schölkopf, Zhijing Jin
-                     <!--<span class="noter"> (* = Equal Contribution)</span><br>--> <br>
-                     <span class="conf"><a class="confshort" href="https://icml.cc">ICML'26 Workshop</a> | Workshop on AI for Math, CS &amp; ML</span><br>
-
-                     <a class="tag" href="https://openreview.net/pdf?id=rIAuqhy6S0" target="_blank">pdf</a><span class="tagsep">|</span><a class="tag" target="_blank" href="https://openreview.net/forum?id=rIAuqhy6S0">abstract</a>
-                 </p>
-                 </div>
-                 <div class="py-2">
-                 <p class="paper my-2 pl-2">
-                     <span class="papertitle">A Multimodal Recaptioning Framework to Account for Perceptual Diversity Across Languages in Vision-Language Modeling</span><br>
-                     Kyle Buettner, <span class="thisauthor">Tae Emmerson</span>, Adriana Kovashka
-                     <!--<span class="noter"> (* = Equal Contribution)</span><br>--> <br>
-                     <span class="conf"><a class="confshort" href="https://2025.aaclnet.org">IJCNLP-AACL'25</a> | International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the Association for Computational Linguistics</span><br>
-                    
-                     <a class="tag" href="https://arxiv.org/pdf/2504.14359" target="_blank">pdf</a><span class="tagsep">|</span><a class="tag" target="_blank" href="https://arxiv.org/abs/2504.14359">abstract</a>
-                 </p>
-                 </div>
-                 <div class="py-2">
-                 <p class="paper my-2 pl-2">
-                     <span class="papertitle">Towards Automated Scoping of AI for Social Good Projects</span><br>
-                     <span class="thisauthor">Tae Emmerson</span>, Rayid Ghani, Ryan Shi
-                     <!--<span class="noter"> (* = Equal Contribution)</span><br>--> <br>
-                     <span class="conf">preprint</span><br>
-                    
-                     <a class="tag" target="_blank" href="https://arxiv.org/pdf/2504.20010">pdf</a><span class="tagsep">|</span><a class="tag" target="_blank" href="https://arxiv.org/abs/2504.20010">abstract</a>
-                 </p>
-                 </div>
-
-
-                <div class="row text-center py-4">
-                    <div class="mx-auto mt-2">
-                        <img class="img-fluid instilogo p-1" src="images/pitt.png">
-                        <div class="institution">B.Sc. Computer Science<br>University of Pittsburgh</div>
-                        <div class="years">2021 - 2024</div>
-                    </div>
-                    <div class="mx-auto mt-2">
-                        <img class="img-fluid instilogo p-1" src="images/ucsd.png">
-                        <div class="institution">M.Sc. Computer Science<br>University of California - San Diego</div>
-                        <div class="years">2026 - Present</div>
-                    </div>
-                    <div class="mx-auto mt-2">
-                        <img class="img-fluid instilogo p-1" src="https://cdn.brandfetch.io/ideJyj7Kn_/w/851/h/851/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1715060291176">
-                        <div class="institution">Research Intern<br>Vector Institute</div>
-                        <div class="years">2025 - 2026</div>
-                    </div>
-                    <div class="mx-auto mt-2">
-                        <img class="img-fluid instilogo p-1" src="images/esai.png">
-                        <div class="institution">Technical Member<br>EuroSafeAI</div>
-                        <div class="years">2026 - 2026</div>
-                    </div>
-                </div>
-                <div class="row text-center py-4">
-                    <div class="mx-auto mt-2">
-                        <a class="credits" href="cites/credits.html" target="_blank">credits</a>
-                    </div>
-                </div>
-
-            </div>
-            
+    <header>
+      <div>
+        <h1>J. Tae Emmerson</h1>
+        <p class="context">/teɪ/; pronounced tay · lastname@ucsd.edu</p>
+        <nav class="links">
+          <a href="https://scholar.google.com/citations?user=YKG43xoAAAAJ&hl=en" target="_blank" rel="noopener">google scholar</a>
+          <a href="https://github.com/jacobemmerson" target="_blank" rel="noopener">github</a>
+          <a href="https://www.linkedin.com/in/jtemmerson/" target="_blank" rel="noopener">linkedin</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">theme</button>
+        </nav>
+      </div>
+      <div class="profilepic-flip-container">
+        <div class="profilepic-flipper">
+          <img src="images/me.webp" class="profilepic" width="256" height="256" alt="Portrait of Tae Emmerson">
+          <img src="images/dog.webp" class="profilepic back" width="256" height="256" alt="The dog">
         </div>
-    </div>
+      </div>
+    </header>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="assets/style.js"></script>
-</body>
-  <style>
-  </style>
+    <main>
+      <section>
+        <h2>about</h2>
+        <div>
+          <p>
+            I'm a graduate student at <a href="https://www.ucsd.edu" target="_blank" rel="noopener">UC San Diego</a> working to make models safer and more governable. I've been fortunate to work with Professors <a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener">Zhijing Jin</a>, <a href="http://paulrcohen.github.io" target="_blank" rel="noopener">Paul Cohen</a>, <a href="https://people.cs.pitt.edu/~kovashka/" target="_blank" rel="noopener">Adriana Kovashka</a> and <a href="https://ryanzshi.github.io" target="_blank" rel="noopener">Ryan Shi</a>.
+          </p>
+          <p>
+            You might find me in either Pittsburgh, PA or San Diego, CA depending on the time of the year. If you're interested in a quick coffee chat or collaborating together, feel free to reach out!
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>publications</h2>
+        <ul>
+          <li class="paper">
+            <span class="papertitle">An Open Pipeline and Dashboard for Systemic-Risk Evidence under the EU AI Act's Code of Practice</span>
+            <span class="authors"><span class="thisauthor">Tae Emmerson</span>, Phuong-Anh Nguyen-Le, Ronan Romano, Wilber Sean V. Anterola, Yann Billeter, Zhijing Jin</span>
+            <span class="venue">preprint</span>
+            <span class="paperlinks"><a href="https://arxiv.org/pdf/2609.28335" target="_blank" rel="noopener">pdf</a> · <a href="https://arxiv.org/abs/2609.28335" target="_blank" rel="noopener">abstract</a></span>
+          </li>
+          <li class="paper">
+            <span class="papertitle">CauSciBench: Can LLMs Automate Causal Inference in Real-World Scientific Research?</span>
+            <span class="authors">Sawal Acharya, Terry Jingchen Zhang, Andrew Kim, Rahul Babu Shrestha, Xianlin Sun, Pepijn Cobben, Maximilian Mordig, <span class="thisauthor">Tae Emmerson</span>, Anahita Haghighat, Furkan Danisman, Yuen Chen, Clijo Jose, Andrei Ioan Muresanu, Justin Cui, Jiarui Liu, Yahang Qi, Punya Syon Pandey, Yinya Huang, Bernhard Schölkopf, Zhijing Jin</span>
+            <span class="venue"><a href="https://icml.cc" target="_blank" rel="noopener">ICML'26</a> · International Conference on Machine Learning</span>
+            <span class="paperlinks"><a href="https://openreview.net/pdf?id=v9d4RqaPFO" target="_blank" rel="noopener">pdf</a> · <a href="https://openreview.net/forum?id=v9d4RqaPFO" target="_blank" rel="noopener">abstract</a></span>
+          </li>
+          <li class="paper">
+            <span class="papertitle">Causal AI Scientist: Towards End-to-End Causal Inference with Large Language Models</span>
+            <span class="authors">Sawal Acharya, Rahul Babu Shrestha, <span class="thisauthor">Tae Emmerson</span>, Vishal Verma, Devansh Bhardwaj, Samuel Simko, Punya Syon Pandey, Anahita Haghighat, Yongjin Yang, Dominik Janzing, Mrinmaya Sachan, Bernhard Schölkopf, Zhijing Jin</span>
+            <span class="venue"><a href="https://icml.cc" target="_blank" rel="noopener">ICML'26 Workshop</a> · Workshop on AI for Math, CS &amp; ML</span>
+            <span class="paperlinks"><a href="https://openreview.net/pdf?id=rIAuqhy6S0" target="_blank" rel="noopener">pdf</a> · <a href="https://openreview.net/forum?id=rIAuqhy6S0" target="_blank" rel="noopener">abstract</a></span>
+          </li>
+          <li class="paper">
+            <span class="papertitle">A Multimodal Recaptioning Framework to Account for Perceptual Diversity Across Languages in Vision-Language Modeling</span>
+            <span class="authors">Kyle Buettner, <span class="thisauthor">Tae Emmerson</span>, Adriana Kovashka</span>
+            <span class="venue"><a href="https://2025.aaclnet.org" target="_blank" rel="noopener">IJCNLP-AACL'25</a> · International Joint Conference on Natural Language Processing &amp; Asia-Pacific Chapter of the Association for Computational Linguistics</span>
+            <span class="paperlinks"><a href="https://arxiv.org/pdf/2504.14359" target="_blank" rel="noopener">pdf</a> · <a href="https://arxiv.org/abs/2504.14359" target="_blank" rel="noopener">abstract</a></span>
+          </li>
+          <li class="paper">
+            <span class="papertitle">Towards Automated Scoping of AI for Social Good Projects</span>
+            <span class="authors"><span class="thisauthor">Tae Emmerson</span>, Rayid Ghani, Ryan Shi</span>
+            <span class="venue">preprint</span>
+            <span class="paperlinks"><a href="https://arxiv.org/pdf/2504.20010" target="_blank" rel="noopener">pdf</a> · <a href="https://arxiv.org/abs/2504.20010" target="_blank" rel="noopener">abstract</a></span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>experience</h2>
+        <ul>
+          <li class="dated"><span class="years">2027</span><span>AI Developer Relations Engineer Co-op (incoming), <a href="https://www.amd.com/en/solutions/ai.html" target="_blank" rel="noopener">AMD</a></span></li>
+          <li class="dated"><span class="years">2026</span><span>Technical Member, EuroSafeAI</span></li>
+          <li class="dated"><span class="years">2025 – 2026</span><span>Research Intern, <a href="https://vectorinstitute.ai" target="_blank" rel="noopener">Vector Institute</a></span></li>
+          <li class="dated"><span class="years">2022 – 2024</span><span>Machine Learning Intern, <a href="https://signaturedx.com" target="_blank" rel="noopener">Signature Diagnostics</a></span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>education</h2>
+        <ul>
+          <li class="dated"><span class="years">2026 –</span><span>M.Sc. Computer Science, UC San Diego</span></li>
+          <li class="dated"><span class="years">2021 – 2024</span><span>B.Sc. Computer Science, University of Pittsburgh</span></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <a href="cites/credits.html" target="_blank">credits</a>
+    </footer>
+  </body>
 </html>
